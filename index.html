@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tic Tac Toe - Vs AI</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+  margin: 0;
+  background-color: #0d0d1f;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #ff007f;
+  margin-bottom: 1rem;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: #1f1f3a;
+  border-radius: 10px;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 0 15px #ff007f;
+}
+
+.cell:hover {
+  background-color: #2a2a50;
+}
+
+.message {
+  margin-top: 20px;
+  text-align: center;
+  display: none;
+}
+
+.message p {
+  font-size: 1.5rem;
+}
+
+#restartBtn {
+  padding: 10px 20px;
+  background-color: #ff007f;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 0 15px #ff007f;
+}
+
+#restartBtn:hover {
+  background: transparent;
+  border: 2px solid #ff007f;
+}
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1rem auto;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff66b2;
+  text-shadow: 0 0 8px #ff007f;
+}
+
+  </style>
+</head>
+<body>
+  <h1 class="title">Tic Tac Toe - VS Computer</h1>
+
+  <!-- ✅ Scoreboard -->
+  <div class="scoreboard">
+    <div>👤 You: <span id="playerScore">0</span></div>
+    <div>🤖 Computer: <span id="computerScore">0</span></div>
+    <div>⚖️ Draws: <span id="drawScore">0</span></div>
+  </div>
+
+  <div class="game-container">
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+  </div>
+
+  <div class="message" id="winningMessage">
+    <p id="messageText"></p>
+    <button id="restartBtn">Restart</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
